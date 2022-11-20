@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="en"><head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="​Colorizing the Prokudin-Gorskii Collection, Overview, Colorizatio​n Pipeline​, 01, 02, 03, 04, Alignment Metrics, ​Reference Color Channel, ​Pyramid Search, ​Pyramid Search Algorithm, Gallery">
+    <meta name="description" content="">
+    <title>Home</title>
+    <link rel="stylesheet" href="nicepage.css" media="screen">
+<link rel="stylesheet" href="Home.css" media="screen">
+    <script class="u-script" type="text/javascript" src="jquery.js" "="" defer=""></script>
+    <script class="u-script" type="text/javascript" src="nicepage.js" "="" defer=""></script>
+    <meta name="generator" content="Nicepage 4.17.10, nicepage.com">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": "Site1"
+}</script>
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="Home">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="website">
+  </head>
+  <body data-home-page="Home.html" data-home-page-title="Home" class="u-body u-xl-mode" data-lang="en"><header class="u-clearfix u-header u-white u-header" id="sec-0750"><div class="u-clearfix u-sheet u-sheet-1">
+        <nav class="u-menu u-menu-one-level u-offcanvas u-menu-1">
+          <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px;">
+            <a class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#">
+              <svg class="u-svg-link" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use></svg>
+              <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
+</g></svg>
+            </a>
+          </div>
+          <div class="u-custom-menu u-nav-container">
+            <ul class="u-nav u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="Home.html" style="padding: 10px 20px;">Home</a>
+</li></ul>
+          </div>
+          <div class="u-custom-menu u-nav-container-collapse">
+            <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
+              <div class="u-inner-container-layout u-sidenav-overflow">
+                <div class="u-menu-close"></div>
+                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.html">Home</a>
+</li></ul>
+              </div>
+            </div>
+            <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+          </div>
+        </nav>
+      </div></header>
+    <section class="u-clearfix u-section-1" id="sec-629e">
+      <div class="u-clearfix u-sheet u-valign-middle-sm u-valign-middle-xs u-sheet-1">
+        <div class="u-expanded-width-sm u-expanded-width-xs u-palette-2-base u-shape u-shape-rectangle u-shape-1"></div>
+        <img class="u-align-left u-image u-image-contain u-image-1" src="images/dc8b428f4389566467de4d14c0721591cb5a1d4671d867ec7ed71cb9ebe5e9b76735af92efcb7b33b9685d29c6f5e219a318a28732785c4550f225_1280.jpg" data-image-width="907" data-image-height="1280">
+        <div class="u-align-left u-container-style u-group u-white u-group-1">
+          <div class="u-container-layout u-container-layout-1">
+            <h3 class="u-text u-text-1">CS194-26 PROJECT 5</h3>
+            <h1 class="u-text u-text-default u-text-2"> Facial Keypoint Detection with Neural Networks</h1>
+            <p class="u-large-text u-text u-text-variant u-text-3"> Songwen Zhao | songwenzhao (at) berkeley (dot) edu</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="u-clearfix u-grey-10 u-section-2" id="sec-abdc">
+      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <h1 class="u-align-left u-text u-text-1">Overview</h1>
+        <p class="u-align-left u-text u-text-2">This is a really interesting project for building facial landmarks detector with neural networks. We will go all the way through the simplest CNN, ResNet and the SOTA Image-to-Image UNet, implementing them and analyzing their performance. It's my first time using PyTorch and being able to finally achieve so much is really cool and rewarding.</p>
+      </div>
+    </section>
+    <section class="u-clearfix u-grey-80 u-section-3" id="sec-7ed5">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <h1 class="u-align-left u-text u-text-1">01&nbsp;Nose Tip Detection</h1>
+        <p class="u-align-left u-text u-text-2">In this part, we will design and train a simple CNN to detect nose tip keypoint using the IMM Face Database.</p>
+      </div>
+    </section>
+    <section class="u-clearfix u-section-4" id="sec-5077">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-text u-text-default u-text-1">First, to make sure I was loading the images and the keypoints correctly, I sampled a few images and display them along with the ground truth nose keypoints as below.</p>
+        <div class="u-expanded-width u-list u-list-1">
+          <div class="u-repeater u-repeater-1">
+            <div class="u-container-style u-image u-list-item u-repeater-item u-image-1" data-image-width="600" data-image-height="400">
+              <div class="u-container-layout u-similar-container u-container-layout-1"></div>
+            </div>
+            <div class="u-container-style u-image u-list-item u-repeater-item u-image-2" data-image-width="600" data-image-height="400">
+              <div class="u-container-layout u-similar-container u-container-layout-2"></div>
+            </div>
+            <div class="u-container-style u-image u-list-item u-repeater-item u-image-3" data-image-width="600" data-image-height="400">
+              <div class="u-container-layout u-similar-container u-container-layout-3"></div>
+            </div>
+            <div class="u-container-style u-image u-list-item u-repeater-item u-image-4" data-image-width="600" data-image-height="400">
+              <div class="u-container-layout u-similar-container u-container-layout-4"></div>
+            </div>
+          </div>
+        </div>
+        <p class="u-text u-text-default u-text-2">The CNN I designed has 3 convolutional layers, 12 7x7 filters for conv1, 16 5x5 filters for conv2, and 32 3x3 filters for conv3. The input image size is 60 by 80, after coonvolutional layers the image size shrink to 4 by 7. So this results in the first fully connected layer to have input size 32x4x7=896. I chose first fully connected layer with 128 output features, and leave the last fully connected layer to have input 128 and output 2.<br>
+          <br>I trained the model for 25 epochs with lr=1e-3. Below are the ​train and validation MSE loss during the training process.<br>
+        </p>
+        <img class="u-align-center u-image u-image-contain u-image-default u-image-5" src="images/loss.jpg" alt="" data-image-width="6000" data-image-height="4000">
+        <p class="u-text u-text-default u-text-3"> See below for​ some example results from performance on the validation set, where red point is the network's prediction and the green point stands for the ground truth.&nbsp;This simple model seemed to work decently, but was likely to mislabel when the face is not from straight on, as shown in (c) and (d) below. This is probably because that, since our network is small and our training data is not enough, the model couldn't distinguish between side face and front face.&nbsp;</p>
+        <div class="u-expanded-width u-list u-list-2">
+          <div class="u-repeater u-repeater-2">
+            <div class="u-container-style u-image u-list-item u-repeater-item u-image-6" data-image-width="600" data-image-height="400">
+              <div class="u-container-layout u-similar-container u-valign-top u-container-layout-5"></div>
+            </div>
+            <div class="u-container-style u-image u-list-item u-repeater-item u-image-7" data-image-width="600" data-image-height="400">
+              <div class="u-container-layout u-similar-container u-valign-top u-container-layout-6"></div>
+            </div>
+            <div class="u-container-style u-image u-list-item u-repeater-item u-image-8" data-image-width="600" data-image-height="400">
+              <div class="u-container-layout u-similar-container u-valign-top u-container-layout-7"></div>
+            </div>
+            <div class="u-container-style u-image u-list-item u-repeater-item u-image-9" data-image-width="600" data-image-height="400">
+              <div class="u-container-layout u-similar-container u-valign-top u-container-layout-8"></div>
+            </div>
+          </div>
+        </div>
+        <p class="u-text u-text-default u-text-4">(a) correct</p>
+        <p class="u-text u-text-default u-text-5">(b) correct</p>
+        <p class="u-text u-text-default u-text-6">(c) incorrect</p>
+        <p class="u-text u-text-default u-text-7">(d) incorrect</p>
+      </div>
+    </section>
+    <section class="u-clearfix u-grey-80 u-section-5" id="sec-a145">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <h1 class="u-align-left u-text u-text-1">02 ​Full Facial Keypoints Detection</h1>
+        <p class="u-align-left u-text u-text-2">Based on what we have achieved in part1, we are now moving forward and detecting all 58 facial landmarks with a bigger CNN.</p>
+      </div>
+    </section>
+    <section class="u-clearfix u-section-6" id="sec-1643">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-text u-text-default u-text-1">This time, since our dataset is small, we need data augmentation to prevent our model from overfitting. What I did includes randomly rotating the face for -15 to 15 degrees and randomly shifting the face for -20 to 20 pixels. Here I sampled a few training images after data augmentation and display them along with the ground truth facial landmarks as below.</p>
+        <div class="u-expanded-width u-list u-list-1">
+          <div class="u-repeater u-repeater-1">
+            <div class="u-container-style u-image u-list-item u-repeater-item u-image-1" data-image-width="3000" data-image-height="2000">
+              <div class="u-container-layout u-similar-container u-container-layout-1"></div>
+            </div>
+            <div class="u-container-style u-image u-list-item u-repeater-item u-image-2" data-image-width="1920" data-image-height="1280">
+              <div class="u-container-layout u-similar-container u-container-layout-2"></div>
+            </div>
+            <div class="u-container-style u-image u-list-item u-repeater-item u-image-3" data-image-width="1920" data-image-height="1280">
+              <div class="u-container-layout u-similar-container u-container-layout-3"></div>
+            </div>
+            <div class="u-container-style u-image u-list-item u-repeater-item u-image-4" data-image-width="1920" data-image-height="1280">
+              <div class="u-container-layout u-similar-container u-container-layout-4"></div>
+            </div>
+          </div>
+        </div>
+        <p class="u-text u-text-default u-text-2">I made my CNN slightly more complicated this time, with 5 convolutional layers and 2 fully connected layers, doubling the number of channels per convolutional layer as the network got deeper. The last fully connected layer outputs 116 predictions (58 * 2 (x, y) coordinates). See below for more details about the network's architecture.&nbsp;<br>
+        </p>
+        <p class="u-align-left u-custom-font u-font-courier-new u-text u-text-default u-text-3"> Net(<br> (conv1): Conv2d(1, 12, kernel_size=(3, 3), stride=(1, 1))<br> (conv2): Conv2d(12, 24, kernel_size=(3, 3), stride=(1, 1))<br> (conv3): Conv2d(24, 48, kernel_size=(3, 3), stride=(1, 1))<br> (conv4): Conv2d(48, 96, kernel_size=(3, 3), stride=(1, 1))<br> (conv5): Conv2d(96, 192, kernel_size=(3, 3), stride=(1, 1))<br> (fc1): Linear(in_features=2880, out_features=1024, bias=True)<br> (fc2): Linear(in_features=1024, out_features=116, bias=True)<br>)<br>
+        </p>
+        <p class="u-align-left u-text u-text-default u-text-4"> I trained the model for 30 epochs with lr=1e-3. Below are the ​train and validation MSE loss during the training process.</p>
+        <img class="u-align-center u-image u-image-contain u-image-default u-image-5" src="images/loss1.jpg" alt="" data-image-width="6000" data-image-height="4000">
+        <p class="u-text u-text-default u-text-5">Evaluating the model on the validation set, I found that it yielded pretty good results on more 'average' faces while struggled with faces either too thin or too wide, as shown below in (d). Also, similar to part1,&nbsp;the model was more likely to fail in the case of side faces as shown below in (c).</p>
+        <div class="u-expanded-width u-list u-list-2">
+          <div class="u-repeater u-repeater-2">
+            <div class="u-container-style u-image u-list-item u-repeater-item u-image-6" data-image-width="600" data-image-height="400">
+              <div class="u-container-layout u-similar-container u-valign-top u-container-layout-5"></div>
+            </div>
+            <div class="u-container-style u-image u-list-item u-repeater-item u-image-7" data-image-width="600" data-image-height="400">
+              <div class="u-container-layout u-similar-container u-valign-top u-container-layout-6"></div>
+            </div>
+            <div class="u-container-style u-image u-list-item u-repeater-item u-image-8" data-image-width="600" data-image-height="400">
+              <div class="u-container-layout u-similar-container u-valign-top u-container-layout-7"></div>
+            </div>
+            <div class="u-container-style u-image u-list-item u-repeater-item u-image-9" data-image-width="600" data-image-height="400">
+              <div class="u-container-layout u-similar-container u-valign-top u-container-layout-8"></div>
+            </div>
+          </div>
+        </div>
+        <p class="u-text u-text-default u-text-6">(a) correct</p>
+        <p class="u-text u-text-default u-text-7">(b) correct</p>
+        <p class="u-text u-text-default u-text-8">(c) incorrect</p>
+        <p class="u-text u-text-default u-text-9">(d) incorrect</p>
+        <p class="u-align-left u-text u-text-default u-text-10">The learned filters of the first two convolutional layers are visualized as follows.<br>
+        </p>
+        <div class="u-expanded-width u-list u-list-3">
+          <div class="u-repeater u-repeater-3">
+            <div class="u-container-style u-image u-list-item u-repeater-item u-image-10" data-image-width="3000" data-image-height="2000">
+              <div class="u-container-layout u-similar-container u-container-layout-9"></div>
+            </div>
+            <div class="u-container-style u-image u-list-item u-repeater-item u-image-11" data-image-width="3000" data-image-height="2000">
+              <div class="u-container-layout u-similar-container u-container-layout-10"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="u-clearfix u-grey-80 u-section-7" id="sec-56a4">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <h1 class="u-align-left u-text u-text-1">03 ​Full Facial Keypoints Detection</h1>
+        <p class="u-align-left u-text u-text-2"> We will be using a larger dataset and ResNet to train a facial keypoints detector that is much more powerful!</p>
+      </div>
+    </section>
+    <section class="u-clearfix u-section-8" id="sec-ad2b">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-text u-text-default u-text-1">From the&nbsp;ibug dataset, using the this data augmentation as in part2, I sampled a few training images and display them along with the ground truth facial landmarks as below.</p>
+        <div class="u-expanded-width u-list u-list-1">
+          <div class="u-repeater u-repeater-1">
+            <div class="u-container-style u-image u-list-item u-repeater-item u-image-1" data-image-width="3000" data-image-height="2000">
+              <div class="u-container-layout u-similar-container u-container-layout-1"></div>
+            </div>
+            <div class="u-container-style u-image u-list-item u-repeater-item u-image-2" data-image-width="1920" data-image-height="1280">
+              <div class="u-container-layout u-similar-container u-container-layout-2"></div>
+            </div>
+            <div class="u-container-style u-image u-list-item u-repeater-item u-image-3" data-image-width="1920" data-image-height="1280">
+              <div class="u-container-layout u-similar-container u-container-layout-3"></div>
+            </div>
+            <div class="u-container-style u-image u-list-item u-repeater-item u-image-4" data-image-width="1920" data-image-height="1280">
+              <div class="u-container-layout u-similar-container u-container-layout-4"></div>
+            </div>
+          </div>
+        </div>
+        <p class="u-text u-text-default u-text-2">For this part, we were suggested to use small standard CNN models so I chose to go with ResNet18 with two small modifications. For the first layer change the input channel to 1 cause our inputs are grayscale images, for the last fully connected layer change the output feature to 132 since we have 68 landmark coordinates to output. Its design is shown in the diagram below.<br>
+        </p>
+        <img class="u-align-center u-image u-image-contain u-image-default u-image-5" src="images/resnet18.png" alt="" data-image-width="3607" data-image-height="755">
+        <p class="u-align-left u-text u-text-default u-text-3"> I trained the model for 10 epochs with lr=2e-4, and another 10 epochs with lr=5e-5. Below are the ​train and validation MSE loss during the training process.</p>
+        <img class="u-align-center u-image u-image-contain u-image-default u-image-6" src="images/loss2.jpg" alt="" data-image-width="6000" data-image-height="4000">
+        <p class="u-text u-text-default u-text-4">Even on such a wild dataset, the results we got  are pretty good. Here I visualized some images with predicated keypoints from the test set.&nbsp;</p>
+        <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
+          <div class="u-layout">
+            <div class="u-layout-col">
+              <div class="u-size-30">
+                <div class="u-layout-row">
+                  <div class="u-align-left u-container-style u-layout-cell u-size-30 u-layout-cell-1">
+                    <div class="u-container-layout u-valign-bottom u-container-layout-5">
+                      <img class="u-image u-image-contain u-image-default u-image-7" src="images/example1000.jpg" alt="" data-image-width="5412" data-image-height="3167">
+                    </div>
+                  </div>
+                  <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-2">
+                    <div class="u-container-layout u-valign-bottom u-container-layout-6">
+                      <img class="u-image u-image-contain u-image-default u-image-8" src="images/example11.jpg" alt="" data-image-width="1792" data-image-height="1920">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="u-size-30">
+                <div class="u-layout-row">
+                  <div class="u-align-left u-container-style u-layout-cell u-size-30 u-layout-cell-3">
+                    <div class="u-container-layout u-container-layout-7">
+                      <img class="u-expanded-height u-image u-image-contain u-image-default u-image-9" src="images/example167.jpg" alt="" data-image-width="1667" data-image-height="1920">
+                    </div>
+                  </div>
+                  <div class="u-align-left u-container-style u-layout-cell u-size-30 u-layout-cell-4">
+                    <div class="u-container-layout u-valign-top u-container-layout-8">
+                      <img class="u-image u-image-contain u-image-default u-image-10" src="images/example341.jpg" alt="" data-image-width="1920" data-image-height="1195">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="u-text u-text-default u-text-5">I also ran the trained model on my own photo collection, as shown below. (a) and (c) basically worked while the model failed on (b). I think it's because that in the image my head is rotated too much even exceeding the range data augmentation covers (-15 to 15 degrees).</p>
+        <div class="u-expanded-width u-list u-list-2">
+          <div class="u-repeater u-repeater-2">
+            <div class="u-container-style u-image u-list-item u-repeater-item u-image-11" data-image-width="4596" data-image-height="3554">
+              <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-9"></div>
+            </div>
+            <div class="u-container-style u-image u-list-item u-repeater-item u-image-12" data-image-width="1616" data-image-height="1920">
+              <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-10"></div>
+            </div>
+            <div class="u-container-style u-image u-list-item u-repeater-item u-image-13" data-image-width="1579" data-image-height="1920">
+              <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-11"></div>
+            </div>
+          </div>
+        </div>
+        <p class="u-text u-text-6">(a) me in middle school</p>
+        <p class="u-text u-text-7">(b) me in high school</p>
+        <p class="u-text u-text-8">(c) ​Chinese actress Zhou Xun</p>
+      </div>
+    </section>
+    <section class="u-clearfix u-grey-80 u-section-9" id="sec-c91a">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <h1 class="u-align-left u-text u-text-1">04 ​​Pixelwise Classification</h1>
+        <p class="u-align-left u-text u-text-2"> Basically the same logic as in part3, but turning regression to a classification problem and using a more SOTA image-to-image network for better performance.&nbsp;</p>
+      </div>
+    </section>
+    <section class="u-clearfix u-section-10" id="sec-969d">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-text u-text-default u-text-1">To turn our regression problem into a pixelwise classification, we use heatmaps instead of landmarks as our lable. To generate heatmaps, I placed a 2D Gaussian of sigma=5, kernel_size=13 at the ground truth coordinate location in the map. I also tried other methods, for example placing 9 Gaussians of sigma=2 at a 3 by 3 patch around&nbsp;the ground truth coordinate, but didn't get better results. For&nbsp;Bells &amp; Whistles, I tried to use1 and 0 mask heatmaps, placing a 5 by 5 patch the ground truth coordinate location, and found the model performed worse. Here I visualized two images along with their accumulated heatmaps from the training set.</p>
+        <div class="u-align-center u-expanded-width u-list u-list-1">
+          <div class="u-repeater u-repeater-1">
+            <div class="u-align-left u-container-style u-image u-list-item u-repeater-item u-image-1" data-image-width="2278" data-image-height="964">
+              <div class="u-container-layout u-similar-container u-container-layout-1"></div>
+            </div>
+            <div class="u-align-left u-container-style u-image u-list-item u-repeater-item u-image-2" data-image-width="2241" data-image-height="976">
+              <div class="u-container-layout u-similar-container u-container-layout-2"></div>
+            </div>
+          </div>
+        </div>
+        <p class="u-text u-text-default u-text-2">For training, I chose the untrained UNet, changed its ​input channel to 1, output channel to 68, init feature to 68 and the activation function of the last layer from sigmoid to softmax by overriding the its 'forward' function. ​See below for more details about the model's architecture.&nbsp;After I got my final results, I also tried not to change the activation function. It turns out to perform badly even with more training epochs. <br>
+        </p>
+        <p class="u-align-left u-custom-font u-font-courier-new u-text u-text-default u-text-3"> MyUNet(<br> (encoder1): Sequential(<br> (enc1conv1): Conv2d(1, 68, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)<br> (enc1norm1): BatchNorm2d(68, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)<br> (enc1relu1): ReLU(inplace=True)<br> (enc1conv2): Conv2d(68, 68, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)<br> (enc1norm2): BatchNorm2d(68, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)<br> (enc1relu2): ReLU(inplace=True)<br> )<br> (pool1): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)<br> (encoder2): Sequential(<br> (enc2conv1): Conv2d(68, 136, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)<br> (enc2norm1): BatchNorm2d(136, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)<br> (enc2relu1): ReLU(inplace=True)<br> (enc2conv2): Conv2d(136, 136, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)<br> (enc2norm2): BatchNorm2d(136, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)<br> (enc2relu2): ReLU(inplace=True)<br> )<br> (pool2): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)<br> (encoder3): Sequential(<br> (enc3conv1): Conv2d(136, 272, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)<br> (enc3norm1): BatchNorm2d(272, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)<br> (enc3relu1): ReLU(inplace=True)<br> (enc3conv2): Conv2d(272, 272, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)<br> (enc3norm2): BatchNorm2d(272, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)<br> (enc3relu2): ReLU(inplace=True)<br> )<br> (pool3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)<br> (encoder4): Sequential(<br> (enc4conv1): Conv2d(272, 544, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)<br> (enc4norm1): BatchNorm2d(544, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)<br> (enc4relu1): ReLU(inplace=True)<br> (enc4conv2): Conv2d(544, 544, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)<br> (enc4norm2): BatchNorm2d(544, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)<br> (enc4relu2): ReLU(inplace=True)<br> )<br> (pool4): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)<br> (bottleneck): Sequential(<br> (bottleneckconv1): Conv2d(544, 1088, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)<br> (bottlenecknorm1): BatchNorm2d(1088, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)<br> (bottleneckrelu1): ReLU(inplace=True)<br> (bottleneckconv2): Conv2d(1088, 1088, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)<br> (bottlenecknorm2): BatchNorm2d(1088, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)<br> (bottleneckrelu2): ReLU(inplace=True)<br> )<br> (upconv4): ConvTranspose2d(1088, 544, kernel_size=(2, 2), stride=(2, 2))<br> (decoder4): Sequential(<br> (dec4conv1): Conv2d(1088, 544, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)<br> (dec4norm1): BatchNorm2d(544, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)<br> (dec4relu1): ReLU(inplace=True)<br> (dec4conv2): Conv2d(544, 544, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)<br> (dec4norm2): BatchNorm2d(544, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)<br> (dec4relu2): ReLU(inplace=True)<br> )<br> (upconv3): ConvTranspose2d(544, 272, kernel_size=(2, 2), stride=(2, 2))<br> (decoder3): Sequential(<br> (dec3conv1): Conv2d(544, 272, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)<br> (dec3norm1): BatchNorm2d(272, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)<br> (dec3relu1): ReLU(inplace=True)<br> (dec3conv2): Conv2d(272, 272, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)<br> (dec3norm2): BatchNorm2d(272, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)<br> (dec3relu2): ReLU(inplace=True)<br> )<br> (upconv2): ConvTranspose2d(272, 136, kernel_size=(2, 2), stride=(2, 2))<br> (decoder2): Sequential(<br> (dec2conv1): Conv2d(272, 136, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)<br> (dec2norm1): BatchNorm2d(136, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)<br> (dec2relu1): ReLU(inplace=True)<br> (dec2conv2): Conv2d(136, 136, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)<br> (dec2norm2): BatchNorm2d(136, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)<br> (dec2relu2): ReLU(inplace=True)<br> )<br> (upconv1): ConvTranspose2d(136, 68, kernel_size=(2, 2), stride=(2, 2))<br> (decoder1): Sequential(<br> (dec1conv1): Conv2d(136, 68, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)<br> (dec1norm1): BatchNorm2d(68, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)<br> (dec1relu1): ReLU(inplace=True)<br> (dec1conv2): Conv2d(68, 68, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)<br> (dec1norm2): BatchNorm2d(68, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)<br> (dec1relu2): ReLU(inplace=True)<br> )<br> (conv): Conv2d(68, 68, kernel_size=(1, 1), stride=(1, 1))<br>)
+        </p>
+        <p class="u-align-left u-text u-text-default u-text-4">I used the L1Loss as my loss function and trained the model for 10 epochs with lr=1e-3, 20 epochs with lr=2e-4. Below are the ​train and validation loss during the training process.</p>
+        <img class="u-align-center u-image u-image-contain u-image-default u-image-3" src="images/loss3.jpg" alt="" data-image-width="3000" data-image-height="2000">
+        <p class="u-text u-text-default u-text-5">For turing the heatmap predication back to landmark, I did a weighted average of the x,y coordinates of all pixels using heatmap as weights. Here are my final results on the test set.</p>
+        <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
+          <div class="u-layout">
+            <div class="u-layout-col">
+              <div class="u-size-30">
+                <div class="u-layout-row">
+                  <div class="u-align-left u-container-style u-layout-cell u-size-30 u-layout-cell-1">
+                    <div class="u-container-layout u-container-layout-3">
+                      <img class="u-image u-image-contain u-image-default u-image-4" src="images/example15.jpg" alt="" data-image-width="1836" data-image-height="1780">
+                    </div>
+                  </div>
+                  <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-2">
+                    <div class="u-container-layout u-valign-bottom u-container-layout-4">
+                      <img class="u-image u-image-contain u-image-default u-image-5" src="images/example342.jpg" alt="" data-image-width="2604" data-image-height="1661">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="u-size-30">
+                <div class="u-layout-row">
+                  <div class="u-align-left u-container-style u-layout-cell u-size-30 u-layout-cell-3">
+                    <div class="u-container-layout u-valign-top u-container-layout-5">
+                      <img class="u-image u-image-contain u-image-default u-image-6" src="images/example53.jpg" alt="" data-image-width="1477" data-image-height="1772">
+                    </div>
+                  </div>
+                  <div class="u-align-left u-container-style u-layout-cell u-size-30 u-layout-cell-4">
+                    <div class="u-container-layout u-valign-top u-container-layout-6">
+                      <img class="u-image u-image-contain u-image-default u-image-7" src="images/example16.jpg" alt="" data-image-width="2118" data-image-height="1784">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="u-text u-text-default u-text-6">I also ran the trained model on my own photo collection, as shown below. The results are much better than part3, surprisingly perfect for all the images!!</p>
+        <div class="u-expanded-width u-list u-list-2">
+          <div class="u-repeater u-repeater-2">
+            <div class="u-container-style u-image u-list-item u-repeater-item u-image-8" data-image-width="2308" data-image-height="1800">
+              <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-7"></div>
+            </div>
+            <div class="u-container-style u-image u-list-item u-repeater-item u-image-9" data-image-width="1502" data-image-height="1785">
+              <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-8"></div>
+            </div>
+            <div class="u-container-style u-image u-list-item u-repeater-item u-image-10" data-image-width="1403" data-image-height="1723">
+              <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-9"></div>
+            </div>
+          </div>
+        </div>
+        <p class="u-text u-text-7">(a) me in middle school</p>
+        <p class="u-text u-text-8">(b) me in high school</p>
+        <p class="u-text u-text-9">(c) ​Chinese actress Zhou Xun</p>
+      </div>
+    </section>
+    <section class="u-clearfix u-grey-80 u-section-11" id="sec-acfa">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <h1 class="u-align-left u-text u-text-1">05 ​Kaggle</h1>
+        <p class="u-align-left u-text u-text-2">It's time to test our model!</p>
+      </div>
+    </section>
+    <section class="u-clearfix u-section-12" id="sec-437d">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-text u-text-default u-text-1">For class Kaggle competition, I used my best model from part3 and achieved an MAE of 8.30587!&nbsp;</p>
+        <img class="u-image u-image-default u-image-1" src="images/Screenshot2022-11-17at21.07.57.png" alt="" data-image-width="2172" data-image-height="295">
+      </div>
+    </section>
+    
+    
+    <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-2ce7"><div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-small-text u-text u-text-variant u-text-1">Songwen Zhao<br> CS194-26: Computer Vision and Computational Photography<br>Project 5:&nbsp;​​​​​​​Facial Keypoint Detection with Neural Networks
+        </p>
+      </div></footer>
+    <section class="u-backlink u-clearfix u-grey-80">
+      <a class="u-link" href="https://nicepage.com/website-templates" target="_blank">
+        <span>Website Templates</span>
+      </a>
+      <p class="u-text">
+        <span>created with</span>
+      </p>
+      <a class="u-link" href="" target="_blank">
+        <span>Website Builder Software</span>
+      </a>. 
+    </section>
+  
+</body></html>
